@@ -8,6 +8,12 @@ body {
   padding-right:2rem;
 }
 
+.icons {
+  font-size: 65px;
+  color: #000;
+  padding-right:2rem;
+}
+
 
 .link-block a {
     margin-top: 5px;
