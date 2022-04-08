@@ -8,6 +8,13 @@ body {
 }
 
 
+.arxiv-link{
+  font-size: 60px;
+  padding:10px;
+}
+
+
+
 .link-block a {
     margin-top: 5px;
     margin-bottom: 5px;
