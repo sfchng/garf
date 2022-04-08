@@ -5,13 +5,12 @@ body {
 .icon-link {
   font-size: 65px;
   color: #000;
-  padding-right:2rem;
 }
 
 .icons {
   font-size: 65px;
   color: #000;
-  padding-right:2rem;
+  padding-right:3rem;
 }
 
 
@@ -87,7 +86,7 @@ authors
 
 .author-block {
   display: inline-block;
-  padding-right: 3em;
+  padding-right: 5em;
 }
 
 .publication-banner img {
