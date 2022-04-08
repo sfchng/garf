@@ -206,21 +206,15 @@
             Despite Neural Radiance Fields (NeRF) showing compelling
             results in photorealistic novel views synthesis of real-world scenes, most
             existing approaches require accurate prior camera poses. Although ap-
-            proaches for jointly recovering the radiance field and camera pose ex-
-            ist (BARF), they rely on a cumbersome coarse-to-fine auxiliary positional
+            proaches for jointly recovering the radiance field and camera pose exist (BARF), they rely on a cumbersome coarse-to-fine auxiliary positional
             embedding to ensure good performance.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            We present Gaussian Activated
+            neural Radiance Fields (GARF), a new positional embedding-free neu-
+            ral radiance field architecture – employing Gaussian activations – that
+            outperforms the current state-of-the-art in terms of high fidelity recon-
+            struction and pose estimation.
           </p>
           <p>
             We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
