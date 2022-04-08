@@ -87,6 +87,7 @@ authors
 
 .author-block {
   display: inline-block;
+  padding-right: 3em;
 }
 
 .publication-banner img {
