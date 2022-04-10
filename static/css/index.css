@@ -97,7 +97,7 @@ authors
 }
 
 .publication-video {
-    position: absolute;
+    position: relative;
     width: 100%;
     padding-bottom: 56.25%;
     overflow: hidden;
