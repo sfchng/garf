@@ -162,8 +162,7 @@ authors
   border-radius: 5px;
 }
 
-.td{
-  padding: 3px;
+.caption-column {
+  margin: 0 !important;
 }
-
 
