@@ -164,5 +164,6 @@ authors
 
 .caption-column {
   margin: 0 !important;
+  margin-top: -5px;
 }
 
