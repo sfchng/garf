@@ -142,6 +142,325 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <!-- 2D planar alignment. -->
+        <h2 class="title is-3">2D Planar Alignment</h2>
+        <hr class="solid">
+        <div class="content has-text-justified">
+          <p>
+            Given 6 image patches of an image, can a embedding-free coordinate network simultaneously reconstructs a high-fidelity neural representation and solve for alignment problem?
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="2d_planar.png" width="640">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            We compare GARF to a variety of network architectures: positional embedding combined with a ReLU nonlinearity (PE-MLP), coarse-to-fine positional embedding combined with a ReLU nonlinearity (BARF) 
+            and sinusoidal representation network (SIREN). Using gaussian activations, GARF solves for highly accurate geometric transformations and neural image representation without cumbersone multi-dimensional parameter tuning
+            and model initialisation.
+          </p>
+          <video id="replay-video"
+                 autoplay
+                 controls
+                 muted
+                 preload
+                 loop
+                 width="100%"
+                 height="100%">
+            <source src="video/image_convergence_v2.mp4"
+                    type="video/mp4">
+          </video>
+          <!--/ Caption. -->
+          <div class="columns">
+            <div class="column">
+              <div class="column is-centered has-text-centered">
+                <p style="margin:-15px">PE-MLP</p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="column is-centered has-text-centered">
+                <p style="margin:-15px">BARF</p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="column is-centered has-text-centered">
+                <p style="margin:-15px">SIREN</p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="column is-centered has-text-centered">
+                <p style="margin:-15px">GARF</p>
+              </div>
+            </div>
+          </div>
+          <!--/ Caption. -->
+        </div>
+
+        <div class="content has-text-justified">
+        <h2 class="title is-4">Neural Image Representation</h2>
+          <p> We postulate that the ability of a network in representing the first-order derivatives of the encoded signal plays a key role in optimizing geometric transformation. 
+            Although all coordinate networks can faithfully represent an image, SIREN and GARF are the only MLPS that can accurately represent the first-order derivative of the image. </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 autoplay
+                 controls
+                 muted
+                 preload
+                 playbackRate="0.5"
+                 width="100%"
+                 height="100%">
+            <source src="video/image_regression_convergence.mp4"
+                    type="video/mp4">
+          </video>
+          <!--/ Caption. -->
+          <div class="columns">
+            <div class="column is-centered has-text-centered">
+                <p style="margin:-5px">GroundTruth</p>
+            </div>
+            <div class="column is-centered has-text-centered">
+                <p style="margin:-5px">PE-MLP</p>
+            </div>
+            <div class="column is-centered has-text-centered">
+                <p style="margin:-5px">SIREN</p>
+            </div>
+            <div class="column is-centered has-text-centered">
+                <p style="margin:-5px">GARF</p>
+            </div>
+          </div>
+          <!--/ Caption. -->
+      </div>
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+    <!--/ Image gradient. -->
+    <div class="content has-text-justified">
+      <h2 class="title is-4">First-order derivative perspective</h2>
+      <p> SIREN is sensitive to initialisation. When jointly optimizing for geometric transformations and neural image reconstruction, SIREN is susceptible to local minima, whereas 
+          GARF can preserve the first-order gradients of the target function.
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="replay-video"
+                  autoplay
+                  controls
+                  muted
+                  preload>
+              <source src="video/grad_gt_convergence.mp4"
+                      type="video/mp4">
+            </video>
+            <p style="text-align:center">GroundTruth</p>
+          </div>
+        </div>
+      </div>
+
+      <!--/ GARF. -->
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="replay-video"
+                  autoplay
+                  controls
+                  muted
+                  preload>
+              <source src="video/grad_pe_mlp_convergence.mp4"
+                      type="video/mp4">
+            </video>
+            <p>PE-MLP</p>
+          </div>
+        </div>
+      </div>
+
+      <!--/ BARF. -->
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="replay-video"
+                  autoplay
+                  controls
+                  muted
+                  preload>
+              <source src="video/grads_convergence.mp4"
+                      type="video/mp4">
+            </video>
+            <p>BARF</p>
+          </div>
+        </div>
+      </div>
+      <!--/ BARF. -->
+
+      <!--/ SIREN. -->
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="replay-video"
+                  autoplay
+                  controls
+                  muted
+                  preload>
+              <source src="video/grad_siren_convergence.mp4"
+                      type="video/mp4">
+            </video>
+            <p style="text-align:center">SIREN</p>
+          </div>
+        </div>
+      </div>
+
+      <!--/ GARF. -->
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="replay-video"
+                  autoplay
+                  controls
+                  muted
+                  preload>
+              <source src="video/grad_garf_convergence.mp4"
+                      type="video/mp4">
+            </video>
+            <p style="text-align:center">GARF</p>
+          </div>
+        </div>
+      </div>
+    <!--/ Image gradient. -->
+  <!--/ 2D planar alignment. -->
+  </div>
+
+    <!--Real world data. -->
+  <div>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <h2 class="title is-3">3D NeRF: Forward-facing Scenes</h2>
+          <hr class="solid">
+            <p> GARF can optimize for high-quality scene representations from unknown camera poses without an auxillary coarse-to-fine positional embedding scheduling.
+            </p>
+        </div>
+          <div class="content has-text-centered">
+            <video id="replay-video"
+              autoplay
+              controls
+              muted
+              preload
+              loop
+              width="86%">
+              <source src="video/llff_flower.mp4"
+                type="video/mp4">
+              </video>
+            <video id="replay-video"
+            autoplay
+            controls
+            muted
+            preload
+            loop
+            width="86%">
+            <source src="video/llff_leaves.mp4"
+              type="video/mp4">
+            </video>
+            <video id="replay-video"
+            autoplay
+            controls
+            muted
+            preload
+            loop
+            width="86%">
+            <source src="video/llff_trex.mp4"
+              type="video/mp4">
+          </video>
+
+          <div class="columns">
+            <div class="column is-two-fifths">
+              <div class="column is-centered has-text-centered">
+                <p style="margin:-10px">PE-MLP</p>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="column is-centered has-text-centered">
+                <p style="margin:-10px">BARF</p>
+              </div>
+            </div>
+            <div class="column is-two-fifths">
+              <div class="column is-centered has-text-centered">
+                <p style="margin:-10px">GARF</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </div>
+    <!--Real world data. -->
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Acknowledgements</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We would like to thank Chen-Hsuan Lin, Huangying Zhan and Tong He for helpful discussions and feedback on the paper. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+<!--/<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+-->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is inspired by <a href="http://mgharbi.com/"> Michaël Gharbi </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
 
 
 
