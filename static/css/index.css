@@ -21,6 +21,10 @@ p{
   font-variant: small-caps;
 }
 
+.nerf-body{
+  padding-top: 3rem;
+  padding-bottom: 0rem;
+}
 
 .teaser .hero-body {
   padding-top: 0;
