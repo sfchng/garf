@@ -206,7 +206,7 @@
         <div class="content has-text-justified">
         <h2 class="title is-4">Neural Image Representation</h2>
           <p> We postulate that the ability of a network in representing the first-order derivatives of the encoded signal plays a key role in optimizing geometric transformation. 
-            Although all coordinate networks can faithfully represent an image, SIREN and GARF are the only MLPS that can accurately represent the first-order derivative of the image. </p>
+            Although all coordinate networks can faithfully represent an image, SIREN and GARF are the only MLPs that can accurately represent the first-order derivative of the image. </p>
         </div>
         <div class="content has-text-centered">
           <video id="replay-video"
@@ -246,7 +246,7 @@
     <div class="content has-text-justified">
       <h2 class="title is-4">First-order derivative perspective</h2>
       <p> SIREN is sensitive to initialisation. When jointly optimizing for geometric transformations and neural image reconstruction, SIREN is susceptible to local minima, whereas 
-          GARF can preserve the first-order gradients of the target function.
+          GARF can well preserve the first-order gradients of the target function.
       </p>
     </div>
 
@@ -439,15 +439,6 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
